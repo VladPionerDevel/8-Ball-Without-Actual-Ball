@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		D2B4928B27915AAC0000972E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4928A27915AAC0000972E /* AppDelegate.swift */; };
 		D2B4928D27915AAC0000972E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4928C27915AAC0000972E /* SceneDelegate.swift */; };
-		D2B4928F27915AAC0000972E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4928E27915AAC0000972E /* ViewController.swift */; };
+		D2B4928F27915AAC0000972E /* ShakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4928E27915AAC0000972E /* ShakeViewController.swift */; };
 		D2B4929227915AAC0000972E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B4929027915AAC0000972E /* Main.storyboard */; };
 		D2B4929427915AAD0000972E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B4929327915AAD0000972E /* Assets.xcassets */; };
 		D2B4929727915AAD0000972E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B4929527915AAD0000972E /* LaunchScreen.storyboard */; };
+		D2B492A427915C6E0000972E /* AnswerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492A327915C6E0000972E /* AnswerWorker.swift */; };
+		D2B492A727915C8F0000972E /* AnswerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492A627915C8F0000972E /* AnswerEntity.swift */; };
+		D2B492AA27915CB60000972E /* ShakePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492A927915CB60000972E /* ShakePresenter.swift */; };
+		D2B492AD27915CD50000972E /* ShakeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492AC27915CD50000972E /* ShakeInteractor.swift */; };
+		D2B492B027915D760000972E /* ClassConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492AF27915D760000972E /* ClassConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D2B4928727915AAC0000972E /* 8BallWithoutActualBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 8BallWithoutActualBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B4928A27915AAC0000972E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2B4928C27915AAC0000972E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D2B4928E27915AAC0000972E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D2B4928E27915AAC0000972E /* ShakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeViewController.swift; sourceTree = "<group>"; };
 		D2B4929127915AAC0000972E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2B4929327915AAD0000972E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2B4929627915AAD0000972E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2B4929827915AAD0000972E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2B492A327915C6E0000972E /* AnswerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerWorker.swift; sourceTree = "<group>"; };
+		D2B492A627915C8F0000972E /* AnswerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerEntity.swift; sourceTree = "<group>"; };
+		D2B492A927915CB60000972E /* ShakePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakePresenter.swift; sourceTree = "<group>"; };
+		D2B492AC27915CD50000972E /* ShakeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeInteractor.swift; sourceTree = "<group>"; };
+		D2B492AF27915D760000972E /* ClassConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,42 @@
 			children = (
 				D2B4928A27915AAC0000972E /* AppDelegate.swift */,
 				D2B4928C27915AAC0000972E /* SceneDelegate.swift */,
-				D2B4928E27915AAC0000972E /* ViewController.swift */,
+				D2B492A127915C370000972E /* Workers */,
+				D2B492A027915C2C0000972E /* Entities */,
+				D2B4929F27915C220000972E /* Modules */,
+				D2B4928E27915AAC0000972E /* ShakeViewController.swift */,
+				D2B492AF27915D760000972E /* ClassConfiguration.swift */,
 				D2B4929027915AAC0000972E /* Main.storyboard */,
 				D2B4929327915AAD0000972E /* Assets.xcassets */,
 				D2B4929527915AAD0000972E /* LaunchScreen.storyboard */,
 				D2B4929827915AAD0000972E /* Info.plist */,
 			);
 			path = 8BallWithoutActualBall;
+			sourceTree = "<group>";
+		};
+		D2B4929F27915C220000972E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D2B492AC27915CD50000972E /* ShakeInteractor.swift */,
+				D2B492A927915CB60000972E /* ShakePresenter.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D2B492A027915C2C0000972E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D2B492A627915C8F0000972E /* AnswerEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		D2B492A127915C370000972E /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				D2B492A327915C6E0000972E /* AnswerWorker.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +176,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2B4928F27915AAC0000972E /* ViewController.swift in Sources */,
+				D2B492AD27915CD50000972E /* ShakeInteractor.swift in Sources */,
+				D2B492B027915D760000972E /* ClassConfiguration.swift in Sources */,
+				D2B492A727915C8F0000972E /* AnswerEntity.swift in Sources */,
+				D2B492AA27915CB60000972E /* ShakePresenter.swift in Sources */,
+				D2B4928F27915AAC0000972E /* ShakeViewController.swift in Sources */,
 				D2B4928B27915AAC0000972E /* AppDelegate.swift in Sources */,
 				D2B4928D27915AAC0000972E /* SceneDelegate.swift in Sources */,
+				D2B492A427915C6E0000972E /* AnswerWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
