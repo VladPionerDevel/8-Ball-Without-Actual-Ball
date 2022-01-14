@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,13 +23,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLO-08-R73">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Shake" id="tRr-4y-qZa">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="k8T-B4-asp">
+                                            <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
+                                            <connections>
+                                                <action selector="gearTapped:" destination="BYZ-38-t0r" id="yWJ-Uh-grk"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="barPosition">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0j5-AC-Jlp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3Xf-YY-GZ1"/>
+                            <constraint firstItem="pLO-08-R73" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5qz-A9-2J7"/>
                             <constraint firstItem="0j5-AC-Jlp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="6Fc-P7-Uvb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0j5-AC-Jlp" secondAttribute="trailing" constant="15" id="EPT-cZ-f6w"/>
+                            <constraint firstItem="pLO-08-R73" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Oxb-2B-icu"/>
+                            <constraint firstItem="pLO-08-R73" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tRk-fJ-FqV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -39,10 +61,65 @@
             </objects>
             <point key="canvasLocation" x="139" y="89"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="WWi-zh-TGS">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" modalPresentationStyle="pageSheet" id="sgp-qq-ztx" customClass="SettingsViewController" customModule="_BallWithoutActualBall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1QH-Cy-ty9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DUP-3z-8xo">
+                                <rect key="frame" x="15" y="64" width="384" height="98"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqp-Vn-5n6">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbk-yJ-0o1">
+                                        <rect key="frame" x="0.0" y="54" width="384" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="sgp-qq-ztx" eventType="touchUpInside" id="vNd-lE-T89"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="U3q-w1-PD3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DUP-3z-8xo" firstAttribute="leading" secondItem="U3q-w1-PD3" secondAttribute="leading" constant="15" id="7WJ-i9-Eb1"/>
+                            <constraint firstItem="U3q-w1-PD3" firstAttribute="trailing" secondItem="DUP-3z-8xo" secondAttribute="trailing" constant="15" id="Gwg-pE-bfg"/>
+                            <constraint firstItem="DUP-3z-8xo" firstAttribute="top" secondItem="U3q-w1-PD3" secondAttribute="top" constant="20" id="rx0-PP-cK6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="defaultAnswerTextField" destination="iqp-Vn-5n6" id="Wne-83-xPy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7aA-vd-v6D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="88"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

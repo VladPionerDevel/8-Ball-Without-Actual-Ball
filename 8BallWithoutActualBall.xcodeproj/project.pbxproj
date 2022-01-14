@@ -18,6 +18,8 @@
 		D2B492AA27915CB60000972E /* ShakePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492A927915CB60000972E /* ShakePresenter.swift */; };
 		D2B492AD27915CD50000972E /* ShakeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492AC27915CD50000972E /* ShakeInteractor.swift */; };
 		D2B492B027915D760000972E /* ClassConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492AF27915D760000972E /* ClassConfiguration.swift */; };
+		D2B492B42791A48C0000972E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492B32791A48C0000972E /* SettingsViewController.swift */; };
+		D2B492B72791A7C50000972E /* UserDefaultsValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492B62791A7C50000972E /* UserDefaultsValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		D2B492A927915CB60000972E /* ShakePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakePresenter.swift; sourceTree = "<group>"; };
 		D2B492AC27915CD50000972E /* ShakeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeInteractor.swift; sourceTree = "<group>"; };
 		D2B492AF27915D760000972E /* ClassConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassConfiguration.swift; sourceTree = "<group>"; };
+		D2B492B32791A48C0000972E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D2B492B62791A7C50000972E /* UserDefaultsValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsValues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +72,12 @@
 			children = (
 				D2B4928A27915AAC0000972E /* AppDelegate.swift */,
 				D2B4928C27915AAC0000972E /* SceneDelegate.swift */,
+				D2B492B62791A7C50000972E /* UserDefaultsValues.swift */,
 				D2B492A127915C370000972E /* Workers */,
 				D2B492A027915C2C0000972E /* Entities */,
 				D2B4929F27915C220000972E /* Modules */,
 				D2B4928E27915AAC0000972E /* ShakeViewController.swift */,
+				D2B492B32791A48C0000972E /* SettingsViewController.swift */,
 				D2B492AF27915D760000972E /* ClassConfiguration.swift */,
 				D2B4929027915AAC0000972E /* Main.storyboard */,
 				D2B4929327915AAD0000972E /* Assets.xcassets */,
@@ -178,12 +184,14 @@
 			files = (
 				D2B492AD27915CD50000972E /* ShakeInteractor.swift in Sources */,
 				D2B492B027915D760000972E /* ClassConfiguration.swift in Sources */,
+				D2B492B72791A7C50000972E /* UserDefaultsValues.swift in Sources */,
 				D2B492A727915C8F0000972E /* AnswerEntity.swift in Sources */,
 				D2B492AA27915CB60000972E /* ShakePresenter.swift in Sources */,
 				D2B4928F27915AAC0000972E /* ShakeViewController.swift in Sources */,
 				D2B4928B27915AAC0000972E /* AppDelegate.swift in Sources */,
 				D2B4928D27915AAC0000972E /* SceneDelegate.swift in Sources */,
 				D2B492A427915C6E0000972E /* AnswerWorker.swift in Sources */,
+				D2B492B42791A48C0000972E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

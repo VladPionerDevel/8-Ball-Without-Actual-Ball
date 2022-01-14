@@ -37,11 +37,15 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
     
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         answerLabel.text = "..."
+        interactor?.fetchAnswer()
     }
     
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        
-        interactor?.fetchAnswer()
+    @IBAction func gearTapped(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController")
+        guard let settingsVC = vc else {return}
+        present(settingsVC, animated: true) { [unowned self] in
+            setAnswerLabel()
+        }
     }
     
     private func setAnswerLabel(){

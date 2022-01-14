@@ -26,7 +26,7 @@ class ShakePresenter: ShakePresentationLogic {
     }
     
     func presentDefaultAnswers()  {
-        let answerViewModel = createAnswerViewModel(answerText: "Deffault answer")
+        let answerViewModel = createAnswerViewModel(answerText: UserDefaultsValues.defaultAnswer)
         displayAnswerInMainThread(viewModel: answerViewModel)
     }
     
