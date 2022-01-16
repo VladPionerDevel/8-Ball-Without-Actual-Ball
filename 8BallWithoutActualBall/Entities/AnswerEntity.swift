@@ -27,6 +27,7 @@ struct AnswerEntity {
     enum AnswerError: Error {
         case connectionError
         case emptyAnswer
+        case emptyRequest
     }
     
 }
@@ -39,6 +40,8 @@ extension AnswerEntity.AnswerError: LocalizedError {
             return "Server Error or Inthernet connection Error"
         case .emptyAnswer:
             return "Empty Answer"
+        case .emptyRequest:
+            return "Empty Request"
         }
     }
     

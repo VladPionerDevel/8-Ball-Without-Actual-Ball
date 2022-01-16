@@ -20,6 +20,7 @@
 		D2B492B027915D760000972E /* ClassConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492AF27915D760000972E /* ClassConfiguration.swift */; };
 		D2B492B42791A48C0000972E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492B32791A48C0000972E /* SettingsViewController.swift */; };
 		D2B492B72791A7C50000972E /* UserDefaultsValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492B62791A7C50000972E /* UserDefaultsValues.swift */; };
+		D2B492BB279434020000972E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492BA279434020000972E /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D2B492AF27915D760000972E /* ClassConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassConfiguration.swift; sourceTree = "<group>"; };
 		D2B492B32791A48C0000972E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D2B492B62791A7C50000972E /* UserDefaultsValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsValues.swift; sourceTree = "<group>"; };
+		D2B492BA279434020000972E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				D2B4929F27915C220000972E /* Modules */,
 				D2B4928E27915AAC0000972E /* ShakeViewController.swift */,
 				D2B492B32791A48C0000972E /* SettingsViewController.swift */,
+				D2B492B9279433E60000972E /* Extensions */,
 				D2B492AF27915D760000972E /* ClassConfiguration.swift */,
 				D2B4929027915AAC0000972E /* Main.storyboard */,
 				D2B4929327915AAD0000972E /* Assets.xcassets */,
@@ -110,6 +113,14 @@
 				D2B492A327915C6E0000972E /* AnswerWorker.swift */,
 			);
 			path = Workers;
+			sourceTree = "<group>";
+		};
+		D2B492B9279433E60000972E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D2B492BA279434020000972E /* String+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 				D2B492AA27915CB60000972E /* ShakePresenter.swift in Sources */,
 				D2B4928F27915AAC0000972E /* ShakeViewController.swift in Sources */,
 				D2B4928B27915AAC0000972E /* AppDelegate.swift in Sources */,
+				D2B492BB279434020000972E /* String+Extension.swift in Sources */,
 				D2B4928D27915AAC0000972E /* SceneDelegate.swift in Sources */,
 				D2B492A427915C6E0000972E /* AnswerWorker.swift in Sources */,
 				D2B492B42791A48C0000972E /* SettingsViewController.swift in Sources */,

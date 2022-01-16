@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ShakeBisnesLogic {
-    func fetchAnswer()
+    func fetchAnswer(stringParameter: String)
 }
 
 class ShakeInteractor: ShakeBisnesLogic {
@@ -21,8 +21,15 @@ class ShakeInteractor: ShakeBisnesLogic {
         self.worker = answerWorker
     }
     
-    func fetchAnswer() {
-        worker.getAnswer(parametr: "7777777") { [self] (result) in
+    func fetchAnswer(stringParameter: String) {
+        
+        guard let parametrEncoded = stringParameter.urlEncode, stringParameter != ""  else {
+            presenter?.presentDefaultAnswers()
+            print(AnswerEntity.AnswerError.emptyRequest.errorDescription ?? "unknown error")
+            return
+        }
+        
+        worker.getAnswer(parametr: parametrEncoded) { [self] (result) in
             
             switch result {
             case .success(let answer):
