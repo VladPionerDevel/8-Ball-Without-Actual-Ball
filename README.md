@@ -8,8 +8,9 @@ Application should have two screens: Main and Settings<br />
 Main screen contains call-to-shake text or answer, depending on the current application state.<br />
 Settings screen allows the user to set and save hardcoded answers  like ""Just do it!"", ""Change your mind"", etc.<br />
 You are free to use any design/layout you want.<br />
-You are free to add any other rules/functionality if they don't counter described ones.<br />
+You are free to add any other rules/functionality if they don't counter described ones.<br /><br />
 
+Continue working on this project<br /><br />
 
 ## RESULT:
 
