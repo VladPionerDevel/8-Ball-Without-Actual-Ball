@@ -13,6 +13,7 @@ You are free to add any other rules/functionality if they don't counter describe
 Continue working on this project<br /><br />
 
 Changes from the develop branch<br /><br />
+This change was added to the feature/homework 1.1 branch.<br /><br />
 
 ## RESULT:
 
