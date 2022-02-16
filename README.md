@@ -12,6 +12,8 @@ You are free to add any other rules/functionality if they don't counter describe
 
 Continue working on this project<br /><br />
 
+Changes from the develop branch<br /><br />
+
 ## RESULT:
 
 <img src="https://raw.githubusercontent.com/VladPionerDevel/8-Ball-Without-Actual-Ball/main/8BallWithoutActualBall/screenshots/fileName.gif" height="500" style="display: block;margin: 20px auto;">
