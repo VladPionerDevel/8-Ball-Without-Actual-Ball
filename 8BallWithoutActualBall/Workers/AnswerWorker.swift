@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol AnswerWorkerProtocol {
     func getAnswer(parametr: String, callBack: @escaping (_ result: Result<AnswerEntity.Response, AnswerEntity.AnswerError>) -> Void)
@@ -13,36 +14,18 @@ protocol AnswerWorkerProtocol {
 
 class AnswerWorker: AnswerWorkerProtocol {
     
-    func getAnswer(parametr: String, callBack: @escaping (_ result: Result<AnswerEntity.Response, AnswerEntity.AnswerError> ) -> Void) {
-        
-        guard let url = URL(string: "https://8ball.delegator.com/magic/JSON/" + parametr) else {return}
-        
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
-            
-            if let _ = error {
-                callBack(.failure(.connectionError))
-                return
-            }
-            
-            guard let data = data else {
-                callBack(.failure(.connectionError))
-                return
-            }
-            
-            do {
-                let answerResponse = try JSONDecoder().decode(AnswerEntity.Response.self, from: data)
+    func getAnswer(parametr: String, callBack: @escaping (_ result: Result<AnswerEntity.Response, AnswerEntity.AnswerError>) -> Void) {
+        AF.request("https://8ball.delegator.com/magic/JSON/" + parametr).validate()
+            .responseDecodable(of: AnswerEntity.Response.self) { response in
                 
-                if let answerText = answerResponse.magic?.answer, answerText != "" {
-                    callBack(.success(answerResponse))
-                } else {
-                    callBack(.failure(.emptyAnswer))
+                switch response.result {
+                case .success(let products):
+                    callBack(.success(products))
+                case .failure(let error):
+                    print(error)
+                    callBack(.failure(.connectionError))
                 }
-                
-            } catch {
-                callBack(.failure(.connectionError))
             }
-            
-        }.resume()
     }
     
 }
