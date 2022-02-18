@@ -9,12 +9,12 @@ import Foundation
 import Alamofire
 
 protocol AnswerWorkerProtocol {
-    func getAnswer(parametr: String, callBack: @escaping (_ result: Result<AnswerEntity.Response, AnswerEntity.AnswerError>) -> Void)
+    func getAnswer(with parametr: String, callBack: @escaping (_ result: Result<AnswerEntity.Response, AnswerEntity.AnswerError>) -> Void)
 }
 
 class AnswerWorker: AnswerWorkerProtocol {
     
-    func getAnswer(parametr: String, callBack: @escaping (_ result: Result<AnswerEntity.Response, AnswerEntity.AnswerError>) -> Void) {
+    func getAnswer(with parametr: String, callBack: @escaping (_ result: Result<AnswerEntity.Response, AnswerEntity.AnswerError>) -> Void) {
         AF.request("https://8ball.delegator.com/magic/JSON/" + parametr).validate()
             .responseDecodable(of: AnswerEntity.Response.self) { response in
                 

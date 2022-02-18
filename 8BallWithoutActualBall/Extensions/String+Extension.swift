@@ -9,7 +9,7 @@ import Foundation
 
 extension String {
     
-    var urlEncode: String? {
+    var urlEncoded: String? {
         return self.addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: ":=\"#%/<>?@\\^`{|} ").inverted)
     }
     

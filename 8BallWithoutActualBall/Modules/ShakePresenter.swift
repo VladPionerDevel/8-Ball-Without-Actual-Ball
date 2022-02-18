@@ -21,12 +21,12 @@ class ShakePresenter: ShakePresentationLogic {
             self.presentDefaultAnswers()
             return
         }
-        let answerViewModel = createAnswerViewModel(answerText: answerText)
+        let answerViewModel = makeAnswerViewModel(answerText: answerText)
         displayAnswerInMainThread(viewModel: answerViewModel)
     }
     
     func presentDefaultAnswers()  {
-        let answerViewModel = createAnswerViewModel(answerText: UserDefaultsValues.defaultAnswer)
+        let answerViewModel = makeAnswerViewModel(answerText: UserDefaultsValues.defaultAnswer)
         displayAnswerInMainThread(viewModel: answerViewModel)
     }
     
@@ -37,7 +37,7 @@ class ShakePresenter: ShakePresentationLogic {
         }
     }
     
-    private func createAnswerViewModel(answerText: String) -> AnswerEntity.ViewModel {
+    private func makeAnswerViewModel(answerText: String) -> AnswerEntity.ViewModel {
         return AnswerEntity.ViewModel(message: answerText)
     }
     
