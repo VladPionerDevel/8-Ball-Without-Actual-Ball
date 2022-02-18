@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol ShakeBisnesLogic {
-    func fetchAnswer(stringParameter: String)
+protocol AnswerFetcher {
+    func fetchAnswer(question: String)
 }
 
-class ShakeInteractor: ShakeBisnesLogic {
+class ShakeInteractor: AnswerFetcher {
     
     var presenter: ShakePresentationLogic?
     
@@ -21,15 +21,15 @@ class ShakeInteractor: ShakeBisnesLogic {
         self.worker = answerWorker
     }
     
-    func fetchAnswer(stringParameter: String) {
+    func fetchAnswer(question: String) {
         
-        guard let parametrEncoded = stringParameter.urlEncode, stringParameter != ""  else {
+        guard let encodedParameter = question.urlEncoded, !question.isEmpty  else {
             presenter?.presentDefaultAnswers()
-            print(AnswerEntity.AnswerError.emptyRequest.errorDescription ?? "unknown error")
+            print(Answer.AnswerError.emptyRequest.errorDescription ?? "unknown error")
             return
         }
         
-        worker.getAnswer(parametr: parametrEncoded) { [self] (result) in
+        worker.getAnswer(with: encodedParameter) { [self] (result) in
             
             switch result {
             case .success(let answer):

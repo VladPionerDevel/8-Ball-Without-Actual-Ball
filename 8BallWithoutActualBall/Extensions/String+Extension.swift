@@ -9,8 +9,8 @@ import Foundation
 
 extension String {
     
-    var urlEncode: String? {
-        return self.addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: ":=\"#%/<>?@\\^`{|} ").inverted)
+    var urlEncoded: String? {
+        return addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: ":=\"#%/<>?@\\^`{|} ").inverted)
     }
     
 }

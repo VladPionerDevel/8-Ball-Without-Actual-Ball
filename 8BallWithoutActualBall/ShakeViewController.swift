@@ -8,13 +8,13 @@
 import UIKit
 
 protocol ShakeDisplayLogic: class {
-    var interactor: ShakeBisnesLogic? {get set}
-    func displayAnswer(viewModel: AnswerEntity.ViewModel)
+    var interactor: AnswerFetcher? {get set}
+    func displayAnswer(viewModel: Answer.DisplayedData)
 }
 
 class ShakeViewController: UIViewController, ShakeDisplayLogic {
     
-    var interactor: ShakeBisnesLogic?
+    var interactor: AnswerFetcher?
     
     @IBOutlet weak var rotationView: UIView!
     @IBOutlet weak var answerLabel: UILabel!
@@ -36,10 +36,10 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
 
-        setTransformeLayer(to: rotationView)
+        setTransformeLayer(for: rotationView)
     }
     
-    func displayAnswer(viewModel: AnswerEntity.ViewModel) {
+    func displayAnswer(viewModel: Answer.DisplayedData) {
         answerLabel.text = viewModel.message
         rotationView.layer.removeAllAnimations()
     }
@@ -47,7 +47,7 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         answerLabel.isHidden = true
         self.rotationView.backgroundColor = .systemPurple
-        interactor?.fetchAnswer(stringParameter: "77777")
+        interactor?.fetchAnswer(question: "77777")
         
         addAnimationRotaion(to: rotationView) { [weak self] in
             if self != nil {
@@ -65,28 +65,28 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
         }
     }
     
-    private func setTransformeLayer(to myView: UIView){
+    private func setTransformeLayer(for view: UIView){
         let transformLayer = CATransformLayer()
         var perspective = CATransform3DIdentity
         perspective.m34 = 1.0 / -2000
         transformLayer.transform = perspective
         
-        transformLayer.addSublayer(myView.layer)
-        view.layer.addSublayer(transformLayer)
+        transformLayer.addSublayer(view.layer)
+        self.view.layer.addSublayer(transformLayer)
     }
     
-    private func addAnimationRotaion(to myView: UIView, completion: @escaping () -> Void ){
-        let anim = CABasicAnimation(keyPath: "transform")
-        anim.fromValue = CATransform3DMakeRotation(0, 0, 1, 0)
-        anim.toValue = CATransform3DMakeRotation(.pi, 0, 1, 0)
-        anim.duration = 0.12
-        anim.repeatCount = .infinity
+    private func addAnimationRotaion(to view: UIView, completion: @escaping () -> Void ){
+        let animation = CABasicAnimation(keyPath: "transform")
+        animation.fromValue = CATransform3DMakeRotation(0, 0, 1, 0)
+        animation.toValue = CATransform3DMakeRotation(.pi, 0, 1, 0)
+        animation.duration = 0.12
+        animation.repeatCount = .infinity
         
         CATransaction.setCompletionBlock {
             completion()
         }
         
-        myView.layer.add(anim, forKey: "transform")
+        view.layer.add(animation, forKey: "transform")
     }
     
     private func setRotationView(){

@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController {
         defaultAnswerTextField.text = UserDefaultsValues.defaultAnswer
     }
     
-    @IBAction func saveButtonTapped(_ sender: Any) {
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
         UserDefaultsValues.defaultAnswer = defaultAnswerTextField.text ?? ""
         dismiss(animated: true)
     }

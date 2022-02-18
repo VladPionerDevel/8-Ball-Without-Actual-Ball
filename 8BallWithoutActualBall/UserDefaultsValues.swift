@@ -20,12 +20,12 @@ class UserDefaultsValues {
         get {
             let answer = userDefaults.string(forKey: Keys.defaultAnswer.rawValue)
             
-            guard let dAnswer = answer else {
+            guard let defaultAnswerFromStorage = answer else {
                 self.defaultAnswer = initialDefaultAnswer
                 return initialDefaultAnswer
             }
             
-            return dAnswer
+            return defaultAnswerFromStorage
         }
         set {
             userDefaults.setValue(newValue, forKey: Keys.defaultAnswer.rawValue)

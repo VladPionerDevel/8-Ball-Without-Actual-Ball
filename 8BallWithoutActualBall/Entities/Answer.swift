@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct AnswerEntity {
+struct Answer {
     
     struct Response: Codable {
         let magic: Magic?
@@ -20,7 +20,7 @@ struct AnswerEntity {
         let type: String?
     }
     
-    struct ViewModel {
+    struct DisplayedData {
         let message: String
     }
     
@@ -32,7 +32,7 @@ struct AnswerEntity {
     
 }
 
-extension AnswerEntity.AnswerError: LocalizedError {
+extension Answer.AnswerError: LocalizedError {
     
     public var errorDescription: String? {
         switch self {
