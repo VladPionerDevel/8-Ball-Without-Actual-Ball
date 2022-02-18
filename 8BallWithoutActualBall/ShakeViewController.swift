@@ -8,13 +8,13 @@
 import UIKit
 
 protocol ShakeDisplayLogic: class {
-    var interactor: ShakeBisnesLogic? {get set}
-    func displayAnswer(viewModel: AnswerEntity.ViewModel)
+    var interactor: AnswerFetcher? {get set}
+    func displayAnswer(viewModel: Answer.DisplayedData)
 }
 
 class ShakeViewController: UIViewController, ShakeDisplayLogic {
     
-    var interactor: ShakeBisnesLogic?
+    var interactor: AnswerFetcher?
     
     @IBOutlet weak var rotationView: UIView!
     @IBOutlet weak var answerLabel: UILabel!
@@ -39,7 +39,7 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
         setTransformeLayer(for: rotationView)
     }
     
-    func displayAnswer(viewModel: AnswerEntity.ViewModel) {
+    func displayAnswer(viewModel: Answer.DisplayedData) {
         answerLabel.text = viewModel.message
         rotationView.layer.removeAllAnimations()
     }
@@ -47,7 +47,7 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         answerLabel.isHidden = true
         self.rotationView.backgroundColor = .systemPurple
-        interactor?.fetchAnswer(parameter: "77777")
+        interactor?.fetchAnswer(question: "77777")
         
         addAnimationRotaion(to: rotationView) { [weak self] in
             if self != nil {

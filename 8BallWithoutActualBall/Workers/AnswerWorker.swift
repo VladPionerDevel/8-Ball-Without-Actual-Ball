@@ -8,15 +8,15 @@
 import Foundation
 import Alamofire
 
-protocol AnswerWorkerProtocol {
-    func getAnswer(with parametr: String, callBack: @escaping (_ result: Result<AnswerEntity.Response, AnswerEntity.AnswerError>) -> Void)
+protocol AnswerGetting {
+    func getAnswer(with parametr: String, callBack: @escaping (_ result: Result<Answer.Response, Answer.AnswerError>) -> Void)
 }
 
-class AnswerWorker: AnswerWorkerProtocol {
+class AnswerWorker: AnswerGetting {
     
-    func getAnswer(with parametr: String, callBack: @escaping (_ result: Result<AnswerEntity.Response, AnswerEntity.AnswerError>) -> Void) {
+    func getAnswer(with parametr: String, callBack: @escaping (_ result: Result<Answer.Response, Answer.AnswerError>) -> Void) {
         AF.request("https://8ball.delegator.com/magic/JSON/" + parametr).validate()
-            .responseDecodable(of: AnswerEntity.Response.self) { response in
+            .responseDecodable(of: Answer.Response.self) { response in
                 
                 switch response.result {
                 case .success(let products):

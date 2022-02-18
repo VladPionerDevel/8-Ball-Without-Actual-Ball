@@ -106,7 +106,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="saveButtonTapped" destination="sgp-qq-ztx" eventType="touchUpInside" id="OsK-ze-3tL"/>
+                                            <action selector="saveButtonTapped:" destination="sgp-qq-ztx" eventType="touchUpInside" id="6ia-nZ-WTS"/>
                                         </connections>
                                     </button>
                                 </subviews>

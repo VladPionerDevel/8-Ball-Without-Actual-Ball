@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,7 @@
 		D2B4929427915AAD0000972E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B4929327915AAD0000972E /* Assets.xcassets */; };
 		D2B4929727915AAD0000972E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B4929527915AAD0000972E /* LaunchScreen.storyboard */; };
 		D2B492A427915C6E0000972E /* AnswerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492A327915C6E0000972E /* AnswerWorker.swift */; };
-		D2B492A727915C8F0000972E /* AnswerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492A627915C8F0000972E /* AnswerEntity.swift */; };
+		D2B492A727915C8F0000972E /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492A627915C8F0000972E /* Answer.swift */; };
 		D2B492AA27915CB60000972E /* ShakePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492A927915CB60000972E /* ShakePresenter.swift */; };
 		D2B492AD27915CD50000972E /* ShakeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492AC27915CD50000972E /* ShakeInteractor.swift */; };
 		D2B492B027915D760000972E /* ClassConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B492AF27915D760000972E /* ClassConfiguration.swift */; };
@@ -37,7 +37,7 @@
 		D2B4929627915AAD0000972E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2B4929827915AAD0000972E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B492A327915C6E0000972E /* AnswerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerWorker.swift; sourceTree = "<group>"; };
-		D2B492A627915C8F0000972E /* AnswerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerEntity.swift; sourceTree = "<group>"; };
+		D2B492A627915C8F0000972E /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		D2B492A927915CB60000972E /* ShakePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakePresenter.swift; sourceTree = "<group>"; };
 		D2B492AC27915CD50000972E /* ShakeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeInteractor.swift; sourceTree = "<group>"; };
 		D2B492AF27915D760000972E /* ClassConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassConfiguration.swift; sourceTree = "<group>"; };
@@ -64,7 +64,6 @@
 				1D76C9F46B5C0EC88A734908 /* Pods-8BallWithoutActualBall.debug.xcconfig */,
 				11EB3776CD9DAB7745F793C1 /* Pods-8BallWithoutActualBall.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -127,7 +126,7 @@
 		D2B492A027915C2C0000972E /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				D2B492A627915C8F0000972E /* AnswerEntity.swift */,
+				D2B492A627915C8F0000972E /* Answer.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -265,7 +264,7 @@
 				D2B492AD27915CD50000972E /* ShakeInteractor.swift in Sources */,
 				D2B492B027915D760000972E /* ClassConfiguration.swift in Sources */,
 				D2B492B72791A7C50000972E /* UserDefaultsValues.swift in Sources */,
-				D2B492A727915C8F0000972E /* AnswerEntity.swift in Sources */,
+				D2B492A727915C8F0000972E /* Answer.swift in Sources */,
 				D2B492AA27915CB60000972E /* ShakePresenter.swift in Sources */,
 				D2B4928F27915AAC0000972E /* ShakeViewController.swift in Sources */,
 				D2B4928B27915AAC0000972E /* AppDelegate.swift in Sources */,
