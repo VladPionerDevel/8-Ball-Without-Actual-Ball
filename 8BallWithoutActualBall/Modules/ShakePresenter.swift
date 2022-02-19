@@ -16,6 +16,12 @@ class ShakePresenter: ShakePresentationLogic {
     
     weak var viewController: ShakeDisplayLogic?
     
+    private var defaultValues: DefaultValues = UserDefaultsValues()
+    
+    required init(viewController: ShakeDisplayLogic?){
+        self.viewController = viewController
+    }
+    
     func presentAnswer(answer: Answer.Response) {
         guard let answerText = answer.magic?.answer else {
             self.presentDefaultAnswers()
@@ -26,7 +32,7 @@ class ShakePresenter: ShakePresentationLogic {
     }
     
     func presentDefaultAnswers()  {
-        let answerViewModel = makeAnswerDisplayedData(answerText: UserDefaultsValues.defaultAnswer)
+        let answerViewModel = makeAnswerDisplayedData(answerText: defaultValues.answer)
         displayAnswerInMainThread(viewModel: answerViewModel)
     }
     

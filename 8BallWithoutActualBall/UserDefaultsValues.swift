@@ -7,21 +7,25 @@
 
 import Foundation
 
-class UserDefaultsValues {
+protocol DefaultValues {
+    var answer: String {mutating get set}
+}
+
+struct UserDefaultsValues: DefaultValues {
     
-    private static let userDefaults = UserDefaults.standard
-    private static let initialDefaultAnswer = "Just do it!"
+    private let userDefaults = UserDefaults.standard
+    private let initialDefaultAnswer = "Just do it!"
     
     private enum Keys: String {
         case defaultAnswer = "defaultAnswer"
     }
     
-    static var defaultAnswer: String {
-        get {
+    var answer: String {
+        mutating get {
             let answer = userDefaults.string(forKey: Keys.defaultAnswer.rawValue)
             
             guard let defaultAnswerFromStorage = answer else {
-                self.defaultAnswer = initialDefaultAnswer
+                self.answer = initialDefaultAnswer
                 return initialDefaultAnswer
             }
             

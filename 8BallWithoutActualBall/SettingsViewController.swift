@@ -11,14 +11,16 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var defaultAnswerTextField: UITextField!
     
+    private var defaultValues: DefaultValues = UserDefaultsValues()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        defaultAnswerTextField.text = UserDefaultsValues.defaultAnswer
+        defaultAnswerTextField.text = defaultValues.answer
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        UserDefaultsValues.defaultAnswer = defaultAnswerTextField.text ?? ""
+        defaultValues.answer = defaultAnswerTextField.text ?? ""
         dismiss(animated: true)
     }
     

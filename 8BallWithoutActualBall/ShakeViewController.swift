@@ -21,6 +21,15 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
     
     private let callToShakeText = "Shaking to get an answer"
     
+    private var animationRoataion: CABasicAnimation = {
+        let animation = CABasicAnimation(keyPath: "transform")
+        animation.fromValue = CATransform3DMakeRotation(0, 0, 1, 0)
+        animation.toValue = CATransform3DMakeRotation(.pi, 0, 1, 0)
+        animation.duration = 0.12
+        animation.repeatCount = .infinity
+        return animation
+    }()
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         ClassConfiguration.shakeModule(configure: self)
