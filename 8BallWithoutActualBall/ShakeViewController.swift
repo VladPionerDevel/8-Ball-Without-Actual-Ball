@@ -85,17 +85,12 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
     }
     
     private func addAnimationRotaion(to view: UIView, completion: @escaping () -> Void ){
-        let animation = CABasicAnimation(keyPath: "transform")
-        animation.fromValue = CATransform3DMakeRotation(0, 0, 1, 0)
-        animation.toValue = CATransform3DMakeRotation(.pi, 0, 1, 0)
-        animation.duration = 0.12
-        animation.repeatCount = .infinity
         
         CATransaction.setCompletionBlock {
             completion()
         }
         
-        view.layer.add(animation, forKey: "transform")
+        view.layer.add(animationRoataion, forKey: "transform")
     }
     
     private func setRotationView(){
