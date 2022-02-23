@@ -7,14 +7,12 @@
 
 import Foundation
 
-class ClassConfiguration {
+struct ClassConfiguration {
     
-    class func shakeModule(configure viewController: ShakeDisplayLogic){
-        //MARK: Initialise components.
-        let presenter = ShakePresenter(viewController: viewController)
+    func shakeModule(configure viewController: ShakeDisplayLogic) {
+        let presenter = ShakePresenter(viewController: viewController, defaultValues: DefaultValues() as DefaultAnswerProvider)
         let interactor = ShakeInteractor(answerWorker: AnswerWorker(), presenter: presenter)
         
-        //MARK: link VIP components.
         viewController.interactor = interactor
     }
     

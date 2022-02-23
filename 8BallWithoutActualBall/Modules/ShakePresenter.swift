@@ -16,27 +16,28 @@ class ShakePresenter: ShakePresentationLogic {
     
     weak var viewController: ShakeDisplayLogic?
     
-    private var defaultValues: DefaultValues = UserDefaultsValues()
+    var defaultValues: DefaultAnswerProvider
     
-    required init(viewController: ShakeDisplayLogic?){
+    required init(viewController: ShakeDisplayLogic?, defaultValues: DefaultAnswerProvider) {
         self.viewController = viewController
+        self.defaultValues = defaultValues
     }
     
     func presentAnswer(answer: Answer.Response) {
         guard let answerText = answer.magic?.answer else {
-            self.presentDefaultAnswers()
+            presentDefaultAnswers()
             return
         }
         let answerViewModel = makeAnswerDisplayedData(answerText: answerText)
         displayAnswerInMainThread(viewModel: answerViewModel)
     }
     
-    func presentDefaultAnswers()  {
+    func presentDefaultAnswers() {
         let answerViewModel = makeAnswerDisplayedData(answerText: defaultValues.answer)
         displayAnswerInMainThread(viewModel: answerViewModel)
     }
     
-    private func displayAnswerInMainThread(viewModel: Answer.DisplayedData){
+    private func displayAnswerInMainThread(viewModel: Answer.DisplayedData) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
             guard self != nil else {return}
             self!.viewController?.displayAnswer(viewModel: viewModel)

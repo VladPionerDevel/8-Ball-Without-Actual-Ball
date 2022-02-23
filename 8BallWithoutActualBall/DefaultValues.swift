@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol DefaultValues {
-    var answer: String {mutating get set}
+protocol DefaultAnswerProvider {
+    var answer: String { mutating get set }
 }
 
-struct UserDefaultsValues: DefaultValues {
+struct DefaultValues: DefaultAnswerProvider {
     
     private let userDefaults = UserDefaults.standard
     private let initialDefaultAnswer = "Just do it!"

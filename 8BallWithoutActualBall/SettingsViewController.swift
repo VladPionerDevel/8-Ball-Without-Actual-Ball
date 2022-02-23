@@ -11,11 +11,20 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var defaultAnswerTextField: UITextField!
     
-    private var defaultValues: DefaultValues = UserDefaultsValues()
+    var defaultValues: DefaultAnswerProvider
+    
+    init?(coder: NSCoder, defaultValues: DefaultAnswerProvider) {
+        self.defaultValues = defaultValues
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("You must create this view controller with a user.")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         defaultAnswerTextField.text = defaultValues.answer
     }
     

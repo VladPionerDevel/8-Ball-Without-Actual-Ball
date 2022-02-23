@@ -21,18 +21,10 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
     
     private let callToShakeText = "Shaking to get an answer"
     
-    private var animationRoataion: CABasicAnimation = {
-        let animation = CABasicAnimation(keyPath: "transform")
-        animation.fromValue = CATransform3DMakeRotation(0, 0, 1, 0)
-        animation.toValue = CATransform3DMakeRotation(.pi, 0, 1, 0)
-        animation.duration = 0.12
-        animation.repeatCount = .infinity
-        return animation
-    }()
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        ClassConfiguration.shakeModule(configure: self)
+        
+        ClassConfiguration().shakeModule(configure: self)
     }
     
     override func viewDidLoad() {
@@ -44,7 +36,7 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-
+        
         setTransformeLayer(for: rotationView)
     }
     
@@ -66,8 +58,11 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
     }
     
     @IBAction func gearTapped(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: SettingsViewController.self))
-        guard let settingsVC = vc else {return}
+        
+        guard let settingsVC = storyboard?.instantiateViewController(identifier: String(describing: SettingsViewController.self), creator: { coder in
+            return SettingsViewController(coder: coder, defaultValues: DefaultValues() as DefaultAnswerProvider)
+        }) else { return }
+        
         present(settingsVC, animated: true) { [unowned self] in
             setAnswerLabel()
             rotationView.backgroundColor = .systemGray4
@@ -85,12 +80,17 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
     }
     
     private func addAnimationRotaion(to view: UIView, completion: @escaping () -> Void ){
+        let animation = CABasicAnimation(keyPath: "transform")
+        animation.fromValue = CATransform3DMakeRotation(0, 0, 1, 0)
+        animation.toValue = CATransform3DMakeRotation(.pi, 0, 1, 0)
+        animation.duration = 0.12
+        animation.repeatCount = .infinity
         
         CATransaction.setCompletionBlock {
             completion()
         }
         
-        view.layer.add(animationRoataion, forKey: "transform")
+        view.layer.add(animation, forKey: "transform")
     }
     
     private func setRotationView(){

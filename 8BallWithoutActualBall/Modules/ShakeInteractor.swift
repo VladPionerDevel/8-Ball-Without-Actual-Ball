@@ -17,7 +17,7 @@ class ShakeInteractor: AnswerFetcher {
     
     private let worker: AnswerWorker
     
-    required init(answerWorker: AnswerWorker, presenter: ShakePresentationLogic?){
+    required init(answerWorker: AnswerWorker, presenter: ShakePresentationLogic?) {
         self.worker = answerWorker
         self.presenter = presenter
     }
