@@ -23,7 +23,8 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        ClassConfiguration.shakeModule(configure: self)
+        
+        ClassConfiguration().shakeModule(configure: self)
     }
     
     override func viewDidLoad() {
@@ -35,7 +36,7 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-
+        
         setTransformeLayer(for: rotationView)
     }
     
@@ -57,8 +58,11 @@ class ShakeViewController: UIViewController, ShakeDisplayLogic {
     }
     
     @IBAction func gearTapped(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: SettingsViewController.self))
-        guard let settingsVC = vc else {return}
+        
+        guard let settingsVC = storyboard?.instantiateViewController(identifier: String(describing: SettingsViewController.self), creator: { coder in
+            return SettingsViewController(coder: coder, defaultValues: DefaultValues() as DefaultAnswerProvider)
+        }) else { return }
+        
         present(settingsVC, animated: true) { [unowned self] in
             setAnswerLabel()
             rotationView.backgroundColor = .systemGray4
